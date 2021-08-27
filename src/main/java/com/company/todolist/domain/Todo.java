@@ -21,8 +21,8 @@ public class Todo {
 
     private String category;
 
-//    private LocalDate targetTo;
-//    private LocalDate targetFrom;
+    private LocalDate targetTo;
+    private LocalDate targetFrom;
 
 //    private String link;
 
@@ -44,13 +44,13 @@ public class Todo {
         return this.category;
     }
 
-//    public LocalDate getTargetTo() {
-//        return this.targetTo;
-//    }
-//
-//    public LocalDate getTargetFrom() {
-//        return this.targetFrom;
-//    }
+    public LocalDate getTargetTo() {
+        return this.targetTo;
+    }
+
+    public LocalDate getTargetFrom() {
+        return this.targetFrom;
+    }
 
     public boolean isChecked() {
         return this.isChecked;
@@ -72,13 +72,13 @@ public class Todo {
         this.category = category;
     }
 
-//    public void setTargetTo(LocalDate targetTo) {
-//        this.targetTo = targetTo;
-//    }
-//
-//    public void setTargetFrom(LocalDate targetFrom) {
-//        this.targetFrom = targetFrom;
-//    }
+    public void setTargetTo(LocalDate targetTo) {
+        this.targetTo = targetTo;
+    }
+
+    public void setTargetFrom(LocalDate targetFrom) {
+        this.targetFrom = targetFrom;
+    }
 
     public void setChecked(boolean isChecked) {
         this.isChecked = isChecked;
@@ -102,13 +102,13 @@ public class Todo {
         final Object this$category = this.getCategory();
         final Object other$category = other.getCategory();
         if (this$category == null ? other$category != null : !this$category.equals(other$category)) return false;
-//        final Object this$targetTo = this.getTargetTo();
-//        final Object other$targetTo = other.getTargetTo();
-//        if (this$targetTo == null ? other$targetTo != null : !this$targetTo.equals(other$targetTo)) return false;
-//        final Object this$targetFrom = this.getTargetFrom();
-//        final Object other$targetFrom = other.getTargetFrom();
-//        if (this$targetFrom == null ? other$targetFrom != null : !this$targetFrom.equals(other$targetFrom))
-//            return false;
+        final Object this$targetTo = this.getTargetTo();
+        final Object other$targetTo = other.getTargetTo();
+        if (this$targetTo == null ? other$targetTo != null : !this$targetTo.equals(other$targetTo)) return false;
+        final Object this$targetFrom = this.getTargetFrom();
+        final Object other$targetFrom = other.getTargetFrom();
+        if (this$targetFrom == null ? other$targetFrom != null : !this$targetFrom.equals(other$targetFrom))
+            return false;
         if (this.isChecked() != other.isChecked()) return false;
         final Object this$user = this.getUser();
         final Object other$user = other.getUser();
@@ -129,10 +129,10 @@ public class Todo {
         result = result * PRIME + ($title == null ? 43 : $title.hashCode());
         final Object $category = this.getCategory();
         result = result * PRIME + ($category == null ? 43 : $category.hashCode());
-//        final Object $targetTo = this.getTargetTo();
-//        result = result * PRIME + ($targetTo == null ? 43 : $targetTo.hashCode());
-//        final Object $targetFrom = this.getTargetFrom();
-//        result = result * PRIME + ($targetFrom == null ? 43 : $targetFrom.hashCode());
+        final Object $targetTo = this.getTargetTo();
+        result = result * PRIME + ($targetTo == null ? 43 : $targetTo.hashCode());
+        final Object $targetFrom = this.getTargetFrom();
+        result = result * PRIME + ($targetFrom == null ? 43 : $targetFrom.hashCode());
         result = result * PRIME + (this.isChecked() ? 79 : 97);
         final Object $user = this.getUser();
         result = result * PRIME + ($user == null ? 43 : $user.hashCode());
@@ -140,8 +140,6 @@ public class Todo {
     }
 
     public String toString() {
-        return "user=" + this.getUser().getName() + " Todo(id=" + this.getId() + ", title=" + this.getTitle() + ", category=" + this.getCategory() +
-                ", isChecked=" + this.isChecked() +  ")";
-//                ", targetTo=" + this.getTargetTo() + ", targetFrom=" + this.getTargetFrom() +
+        return "user=" + this.getUser().getName() + " Todo(id=" + this.getId() + ", title=" + this.getTitle() + ", category=" + this.getCategory() + ", targetTo=" + this.getTargetTo() + ", targetFrom=" + this.getTargetFrom() + ", isChecked=" + this.isChecked() +  ")";
     }
 }
