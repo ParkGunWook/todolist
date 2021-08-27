@@ -31,4 +31,9 @@ public class TodoController {
     public Todo updateTodo(@PathVariable String name, @RequestBody Todo todo) {
         return todoService.addTodo(userService.selectUser(name), todo);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteTodo(@PathVariable Long id) {
+        todoService.deleteTodo(id);
+    }
 }

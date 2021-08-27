@@ -5,6 +5,8 @@ import com.company.todolist.service.UserService;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Api(tags = "유저의 정보를 관리하는 API입니다.")
 @RestController()
 @RequestMapping("api/users")
@@ -24,5 +26,10 @@ public class UserController {
     @PostMapping("/")
     public User updateUser(@RequestBody User user) {
         return userService.updateUser(user);
+    }
+
+    @GetMapping("/")
+    public List<User> getUsers() {
+        return userService.selectUsers();
     }
 }

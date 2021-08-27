@@ -4,6 +4,8 @@ import com.company.todolist.domain.User;
 import com.company.todolist.repository.UserJpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     private final UserJpaRepository userJpaRepository;
@@ -14,6 +16,10 @@ public class UserService {
 
     public User updateUser(User user) {
         return userJpaRepository.save(user);
+    }
+
+    public List<User> selectUsers() {
+        return userJpaRepository.findAll();
     }
 
     public User selectUser(String name) {
