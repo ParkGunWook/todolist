@@ -3,6 +3,8 @@ package com.company.todolist.controller;
 import com.company.todolist.domain.User;
 import com.company.todolist.service.UserService;
 import io.swagger.annotations.Api;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +21,13 @@ public class UserController {
     }
 
     @GetMapping("/{name}")
-    public User getUser(@PathVariable String name) {
-        return userService.selectUser(name);
+    public ResponseEntity<User> getUser(@PathVariable String name) {
+        User user = userService.selectUser(name);
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+        } else {
+            return ResponseEntity.ok(user);
+        }
     }
 
     @PostMapping("/")
