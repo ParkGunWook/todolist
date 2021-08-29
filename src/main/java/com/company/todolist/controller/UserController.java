@@ -30,12 +30,12 @@ public class UserController {
         }
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public User updateUser(@RequestBody User user) {
         return userService.updateUser(user);
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<User> getUsers() {
         return userService.selectUsers();
     }
